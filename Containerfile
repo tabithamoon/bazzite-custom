@@ -26,6 +26,17 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build.sh
 
+## Adding the akmods from ublue's akmods images
+## Unfortunately this is a stub for now as ublue images are sorely lacking in modules at the moment.
+COPY --from=ghcr.io/ublue-os/akmods:main-44 / /tmp/akmods-common
+RUN dnf5 -y install /tmp/akmods-common/rpms/ublue-os/ublue-os-akmods*.rpm
+
+## Install kernel modules here
+# RUN dnf5 -y install /tmp/akmods-common/rpms/kmods/kmod-v4l2loopback*.rpm
+
+## Cleanup
+RUN rm -rf /tmp/akmods-common
+
 ### LINTING
 ## Verify final image and contents are correct.
 RUN bootc container lint
