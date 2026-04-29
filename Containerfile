@@ -3,7 +3,7 @@ FROM scratch AS ctx
 COPY build_files /
 
 # Base Image
-FROM ghcr.io/ublue-os/kinoite-nvidia:43
+FROM ghcr.io/ublue-os/silverblue-nvidia:44
 
 ### [IM]MUTABLE /opt
 ## Some bootable images, like Fedora, have /opt symlinked to /var/opt, in order to
