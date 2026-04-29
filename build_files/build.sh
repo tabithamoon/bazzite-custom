@@ -9,6 +9,9 @@ dnf5 -y copr enable ublue-os/akmods
 # Install general packages
 dnf5 -y install btop fish
 
+# Install GUI apps
+dnf5 -y install bazaar
+
 # Remove unneeded packages
 dnf5 -y remove gnome-software* firefox*
 
