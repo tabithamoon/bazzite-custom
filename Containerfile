@@ -26,13 +26,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build.sh
 
-### AKMODS
-## Adding relevant akmods from ublue-os/akmods
-COPY --from=ghcr.io/ublue-os/akmods:main-43 / /tmp/akmods-common
-RUN find /tmp/akmods-common
-RUN dnf5 -y install /tmp/akmods-common/rpms/ublue-os/ublue-os-akmods*.rpm
-RUN dnf5 -y install /tmp/akmods-common/rpms/kmods/kmod-v4l2loopback*.rpm
-
 ### LINTING
 ## Verify final image and contents are correct.
 RUN bootc container lint
