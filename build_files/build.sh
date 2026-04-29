@@ -6,7 +6,7 @@ set -ouex pipefail
 dnf5 -y copr enable ublue-os/packages
 
 # Install general packages
-dnf5 -y install btop fish
+dnf5 -y install btop fish gnome-software*
 
 # Disable COPRs
 dnf5 -y copr disable ublue-os/packages
