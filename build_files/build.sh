@@ -12,9 +12,6 @@ dnf5 -y install btop fish android-tools
 # Install GUI apps
 dnf5 -y install bazaar
 
-# Add system components
-dnf5 -y install ublue-os-udev-rules
-
 # Remove unneeded packages
 dnf5 -y remove gnome-software* firefox*
 
