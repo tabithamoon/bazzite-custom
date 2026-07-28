@@ -13,7 +13,7 @@ dnf5 -y install btop fish android-tools
 dnf5 -y install bazaar
 
 # Remove unneeded packages
-dnf5 -y remove gnome-software* firefox*
+dnf5 -y remove kate kcm-fcitx5 fcitx5-* firefox*
 
 # Disable COPRs
 dnf5 -y copr disable ublue-os/akmods
