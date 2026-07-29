@@ -3,21 +3,9 @@ set -ouex pipefail
 
 ### Packages
 # Enable COPRs
-dnf5 -y copr enable ublue-os/packages
-dnf5 -y copr enable ublue-os/akmods
+#dnf5 -y copr enable ublue-os/packages
 
-# Install general packages
-dnf5 -y install btop fish android-tools
-
-# Install GUI apps
-dnf5 -y install bazaar
-
-# Remove unneeded packages
-dnf5 -y remove kate kcm-fcitx5 fcitx5-* firefox*
-
-# Disable COPRs
-dnf5 -y copr disable ublue-os/akmods
-dnf5 -y copr disable ublue-os/packages
+#dnf5 -y copr disable ublue-os/packages
 
 ### System units
 # systemctl enable podman.socket
